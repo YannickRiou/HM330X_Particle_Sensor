@@ -5,7 +5,7 @@
 Arduino library for HM3301/HM3302 dust sensor.
 https://www.seeedstudio.com/Grove-Laser-PM2-5-Sensor-HM3301.html
 
-This is intended to provide a much simpelr-to-use version of the library originally published by Seeed.
+This is intended to provide a much simpler-to-use version of the library originally published by Seeed.
 
 You can install it from Arduino Library Manager.
 
