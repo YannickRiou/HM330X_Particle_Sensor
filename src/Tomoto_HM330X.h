@@ -33,6 +33,7 @@ class Tomoto_HM330X {
   bool readSensor();
   void sleep();
   void wakeup();
+  bool setSleepPin(uint8_t pin);
 
   uint16_t getSensorNumber() const { return decodeUint16(m_data, 1); }
 
@@ -78,7 +79,6 @@ class Tomoto_HM330X {
 
  private:
   bool sendCommand(uint8_t cmd);
-  bool setSleepPin(uint8_t pin);
 
   static uint16_t decodeUint16(const uint8_t* data, int i) {
     return data[i * 2] * 0x100 + data[i * 2 + 1];
