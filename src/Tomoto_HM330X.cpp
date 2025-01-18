@@ -50,3 +50,25 @@ bool Tomoto_HM330X::readSensor() {
   memcpy(m_data, buf, DATA_SIZE);
   return true;
 }
+
+bool Tomoto_HM330X::sleep()
+{
+  digitalWrite(sleepPin, LOW);
+}
+
+bool Tomoto_HM330X::wakeup()
+{
+  digitalWrite(sleepPin, HIGH);
+}
+
+bool Tomoto_HM330X::setSleepPin(uint8_t pin)
+{
+  if (pin < 0)
+  {
+    return false;
+  }
+  sleepPin = pin;
+  pinMode(sleepPin, OUTPUT);
+
+  return True;
+}

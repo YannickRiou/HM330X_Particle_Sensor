@@ -19,6 +19,8 @@ class Tomoto_HM330X {
   TwoWire& m_wire;
   uint8_t m_addr;
 
+  uint8_t sleepPin;
+
   static const uint8_t DATA_SIZE = 29;
   uint8_t m_data[DATA_SIZE];
 
@@ -29,6 +31,8 @@ class Tomoto_HM330X {
 
   bool begin(bool retry = true);
   bool readSensor();
+  void sleep();
+  void wakeup();
 
   uint16_t getSensorNumber() const { return decodeUint16(m_data, 1); }
 
@@ -74,6 +78,7 @@ class Tomoto_HM330X {
 
  private:
   bool sendCommand(uint8_t cmd);
+  bool setSleepPin(uint8_t pin);
 
   static uint16_t decodeUint16(const uint8_t* data, int i) {
     return data[i * 2] * 0x100 + data[i * 2 + 1];
