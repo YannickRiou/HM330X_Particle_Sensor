@@ -51,12 +51,12 @@ bool Tomoto_HM330X::readSensor() {
   return true;
 }
 
-bool Tomoto_HM330X::sleep()
+void Tomoto_HM330X::sleep()
 {
   digitalWrite(sleepPin, LOW);
 }
 
-bool Tomoto_HM330X::wakeup()
+void Tomoto_HM330X::wakeup()
 {
   digitalWrite(sleepPin, HIGH);
 }
