@@ -70,5 +70,5 @@ bool Tomoto_HM330X::setSleepPin(uint8_t pin)
   sleepPin = pin;
   pinMode(sleepPin, OUTPUT);
 
-  return True;
+  return true;
 }
